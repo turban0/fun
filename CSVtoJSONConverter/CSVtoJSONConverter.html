@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Convert Translations</title>
+    <title>CSV to JSON Converter</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<script>
@@ -45,7 +45,7 @@
 		recurse(data, "");
 		return result;
 	}
-	
+
 	function createCSV(data){
 		var str = "";
 		for(var p in data) {
@@ -53,7 +53,7 @@
 		}
 		return str;
 	}
-	
+
 	function convertJSONtoCSV() {
 		var inputText = document.getElementById("json").value;
 		try {
@@ -62,12 +62,12 @@
 			alert(err.message);
 		}
 	}
-	
+
 	function convertCSVtoJSON() {
 		var inputText = document.getElementById("csv").value;
 		var temp = inputText.trim();
 		var temp = temp.replace(/;/g,"\":\"");
-		temp = temp.replace(/^(.*)$/gm, "\"$1\",");	
+		temp = temp.replace(/^(.*)$/gm, "\"$1\",");
 		temp = temp.replace(/,$/g, "");
 		temp = "{" + temp + "}";
 		try {
