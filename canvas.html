@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Canvas tutorial</title>
+    <script type="text/javascript">
+	  Config = {
+		canvasWidth: 600,
+		canvasHeight: 600,
+		squareSize: 10,
+		spaceBetween: 10
+	  }
+	
+      function draw(){
+        var canvas = document.getElementById('tutorial');
+		canvas.width = Config.canvasWidth;
+		canvas.height = Config.canvasHeight;
+        if (canvas.getContext){
+          var ctx = canvas.getContext('2d');
+		  
+        }
+      }
+    </script>
+    <style type="text/css">
+      canvas { border: 1px solid black; }
+    </style>
+  </head>
+  <body onload="draw();">
+    <canvas id="tutorial"></canvas>
+  </body>
+</html>
